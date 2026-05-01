@@ -201,22 +201,6 @@ def main():
     print(f"TOTAL TIME:        {total_end - total_start:8.4f}s")
     print("="*50)
     
-    # Speed assessment
-    algorithm_time = prim_end - prim_start
-    if algorithm_time < 0.1:
-        print("BLAZING FAST!")
-    elif algorithm_time < 1.0:
-        print("VERY FAST - Good performance!")
-    elif algorithm_time < 5.0:
-        print("FAST - Competitive performance")
-    elif algorithm_time < 30.0:
-        print("ACCEPTABLE - Could be optimized")
-    else:
-        print("SLOW - Check your algorithm")
-    
-    print("\nDone!")
-
-
 if __name__ == "__main__":
     main()
 
