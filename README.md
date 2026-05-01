@@ -1,35 +1,25 @@
-# City_connection_project
+## README - City Connections (MST Project)
+## CSCI 311 - Spring 2026
 
-#Prism Algorithm:
-This program finds the minimum cost to connect all nodes in a graph.
-Used for the city cable-laying problem.
+KruskalAlgorithm.py  - MST using Kruskal's algorithm with a custom Disjoint Set Union (DSU)
 
-Algorithm Overview:
-1. Start from any node
-2. Repeatedly add the cheapest edge connecting a visited node to an unvisited node
-3. Continue until all nodes are visited
-4. Result: Minimum Spanning Tree (MST)
+prims.py             - MST using Prim's algorithm with a custom binary min-heap priority queue
 
-    Why this works?
-    - Greedy algorithm: always pick cheapest available edge
-    - Cut property: cheapest edge crossing any cut is in MST
-    - Prim's maintains a single growing tree
-    
-    Data Structures:
-    - visited (set): Track which nodes we've added to MST - O(1) lookup
-    - min_heap (MinHeap): Priority queue of edges - O(log n) operations
-    
-    Time Complexity:
-    - Each edge considered once: O(E)
-    - Each edge pushed/popped from heap: O(log V)
-    - Total: O((V + E) log V)
-  
-We used Custom Binary Min Heap Implementation
-Used as priority queue for Prim's algorithm
+min_heap.py          - Custom MinHeap class used by prims.py
 
-A binary min heap is a complete binary tree where:
-- Every parent node is smaller than its children
-- The minimum element is always at the root (index 0)
-- Stored as an array/list for efficiency
-- 
-    
+Both programs read a weighted undirected graph from an input file, compute the Minimum
+Spanning Tree (MST), and write the MST edges to an output file in the same format.
+
+## HOW TO RUN
+
+Kruskal's:
+  python KruskalAlgorithm.py inputfile outputfile
+
+Prim's:
+  python prims.py inputfile outputfile
+
+### Example:
+
+  python KruskalAlgorithm.py SanJoaquin.txt kruskal_out.txt
+
+  python prims.py SanJoaquin.txt prims_out.txt
